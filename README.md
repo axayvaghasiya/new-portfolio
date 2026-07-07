@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# akshayvaghasiya.com
 
-## Getting Started
+Personal portfolio and marketing site for **Akshay Vaghasiya** — Full Stack Commerce Engineer & Freelance eCommerce Consultant, Shopify Select Partner.
 
-First, run the development server:
+Live at [akshayvaghasiya.com](https://akshayvaghasiya.com).
+
+## Tech stack
+
+- [Next.js 15](https://nextjs.org) (App Router, Turbopack)
+- [React 19](https://react.dev)
+- [Tailwind CSS 4](https://tailwindcss.com)
+- [GSAP](https://gsap.com) + [Lenis](https://lenis.darkroom.engineering) for scroll/motion
+- [Three.js](https://threejs.org) for the hero canvas
+- [Resend](https://resend.com) for transactional email (contact form)
+- [Cloudflare Turnstile](https://developers.cloudflare.com/turnstile/) for bot verification
+- [Tawk.to](https://www.tawk.to) for live chat
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view it.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Copy `.env.local` (gitignored, not committed) and fill in:
 
-## Learn More
+| Variable | Purpose |
+|---|---|
+| `RESEND_API_KEY` | sends contact form submissions via Resend |
+| `CONTACT_FROM_EMAIL` | verified sender address for outgoing contact emails |
+| `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | Cloudflare Turnstile widget (client-side) |
+| `TURNSTILE_SECRET_KEY` | Cloudflare Turnstile verification (server-side) |
 
-To learn more about Next.js, take a look at the following resources:
+The contact form works without the Turnstile keys (honeypot, rate limiting, and a fill-time check still apply) but skips the CAPTCHA-style verification step until they're set.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+src/
+├── app/            # routes (About, Projects, Services, Pricing, Blog, Contact, Legal) + API routes
+├── components/      # layout, sections, ui, canvas, and graphics components
+├── data/            # static content (projects, blog posts, etc.)
+└── lib/             # site config, contact form constants, rate limiter, utilities
+```
 
-## Deploy on Vercel
+## Scripts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run dev      # start dev server (Turbopack)
+npm run build     # production build
+npm run start     # run the production build
+npm run lint      # lint the project
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deployment
+
+Deployed on [Vercel](https://vercel.com). Pushing to `main` triggers a production deploy; make sure the environment variables above are set in the Vercel project settings first.
+
+## License
+
+© 2026 Akshay Vaghasiya ([akshayvaghasiya.com](https://akshayvaghasiya.com)). All rights reserved.
