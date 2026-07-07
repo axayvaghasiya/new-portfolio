@@ -1,10 +1,22 @@
 "use client";
 
 import Script from "next/script";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { site } from "@/lib/site";
 import { budgetOptions, contactFieldLimits } from "@/lib/contact";
 import { Button } from "@/components/ui/Button";
+
+declare global {
+  interface Window {
+    turnstile?: {
+      render: (
+        container: HTMLElement,
+        options: { sitekey: string; theme?: "light" | "dark" | "auto" }
+      ) => string;
+      remove: (widgetId: string) => void;
+    };
+  }
+}
 
 const budgets = budgetOptions;
 
@@ -22,7 +34,26 @@ export function ContactForm() {
   const [fileName, setFileName] = useState("");
   const [fileError, setFileError] = useState("");
   const [loadedAt] = useState(() => Date.now());
+  const [turnstileScriptLoaded, setTurnstileScriptLoaded] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
+  const turnstileContainerRef = useRef<HTMLDivElement>(null);
+  const turnstileWidgetIdRef = useRef<string | null>(null);
+
+  useEffect(() => {
+    if (!TURNSTILE_SITE_KEY || !turnstileScriptLoaded || !turnstileContainerRef.current) return;
+
+    turnstileWidgetIdRef.current = window.turnstile!.render(turnstileContainerRef.current, {
+      sitekey: TURNSTILE_SITE_KEY,
+      theme: "dark",
+    });
+
+    return () => {
+      if (turnstileWidgetIdRef.current) {
+        window.turnstile?.remove(turnstileWidgetIdRef.current);
+        turnstileWidgetIdRef.current = null;
+      }
+    };
+  }, [turnstileScriptLoaded, status]);
 
   function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];
@@ -246,8 +277,12 @@ export function ContactForm() {
 
       {TURNSTILE_SITE_KEY && (
         <>
-          <Script src="https://challenges.cloudflare.com/turnstile/v0/api.js" strategy="afterInteractive" async defer />
-          <div className="cf-turnstile" data-sitekey={TURNSTILE_SITE_KEY} data-theme="dark" />
+          <Script
+            src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+            strategy="afterInteractive"
+            onLoad={() => setTurnstileScriptLoaded(true)}
+          />
+          <div ref={turnstileContainerRef} />
         </>
       )}
 
