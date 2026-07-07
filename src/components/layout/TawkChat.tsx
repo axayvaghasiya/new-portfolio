@@ -3,7 +3,7 @@ import Script from "next/script";
 // Tawk.to live chat widget — loaded on every page, bottom-right bubble.
 export function TawkChat() {
   return (
-    <Script id="tawk-to" strategy="afterInteractive">
+    <Script id="tawk-to">
       {`
         var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
         (function () {
