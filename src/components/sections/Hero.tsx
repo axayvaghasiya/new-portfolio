@@ -92,7 +92,7 @@ export function Hero() {
           className="font-display font-bold tracking-[-0.03em] uppercase [perspective:900px]"
           aria-label={site.name}
         >
-          <span className="block overflow-hidden pb-1 text-[clamp(3rem,11vw,8.5rem)] leading-[0.95] text-white [transform-style:preserve-3d]">
+          <span className="block overflow-hidden pb-1 text-[clamp(3rem,11vw,8.5rem)] leading-[0.95] text-fg [transform-style:preserve-3d]">
             <Chars text="AKSHAY" />
           </span>
           <span className="block overflow-hidden pb-2 text-[clamp(3rem,11vw,8.5rem)] leading-[0.95] [transform-style:preserve-3d]">
@@ -102,11 +102,11 @@ export function Hero() {
 
         <p className="hero-fade mt-8 font-display text-lg font-medium text-purple md:text-2xl">
           {site.role}
-          <span className="mx-3 text-white/25">·</span>
+          <span className="mx-3 text-muted">·</span>
           <span className="text-gold">Freelance eCommerce Consultant</span>
         </p>
 
-        <p className="hero-fade mx-auto mt-5 max-w-2xl text-base leading-relaxed text-white/60 md:text-lg">
+        <p className="hero-fade mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted md:text-lg">
           {site.intro}
         </p>
 
@@ -127,10 +127,10 @@ export function Hero() {
               className="border-white/8 border-l first:border-l-0 max-md:odd:border-l-0"
             >
               <dt className="sr-only">{stat.label}</dt>
-              <dd className="font-display text-3xl font-semibold text-white md:text-4xl">
+              <dd className="font-display text-3xl font-semibold text-fg md:text-4xl">
                 <Counter value={stat.value} suffix={stat.suffix} />
               </dd>
-              <dd className="mt-1 font-mono text-[0.68rem] tracking-[0.18em] text-white/40 uppercase">
+              <dd className="mt-1 font-mono text-[0.68rem] tracking-[0.18em] text-muted uppercase">
                 {stat.label}
               </dd>
             </div>
@@ -141,7 +141,7 @@ export function Hero() {
       {/* Scroll indicator */}
       <div className="hero-scroll absolute bottom-7 left-1/2 z-10 -translate-x-1/2">
         <div className="flex flex-col items-center gap-2">
-          <span className="font-mono text-[0.6rem] tracking-[0.3em] text-white/30 uppercase">
+          <span className="font-mono text-[0.6rem] tracking-[0.3em] text-muted uppercase">
             Scroll
           </span>
           <svg

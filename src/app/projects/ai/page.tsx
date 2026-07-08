@@ -60,16 +60,16 @@ export default function AiProjectsPage() {
 
                   <h2
                     className={cn(
-                      "mt-7 font-display text-3xl font-semibold tracking-tight text-white transition-colors duration-300",
+                      "mt-7 font-display text-3xl font-semibold tracking-tight text-fg transition-colors duration-300",
                       a.title
                     )}
                   >
                     {product.title}
                   </h2>
-                  <p className="mt-2 font-mono text-sm text-white/45">
+                  <p className="mt-2 font-mono text-sm text-muted">
                     {product.tagline}
                   </p>
-                  <p className="mt-6 leading-relaxed text-white/60">
+                  <p className="mt-6 leading-relaxed text-muted">
                     {product.description}
                   </p>
 
@@ -77,7 +77,7 @@ export default function AiProjectsPage() {
                     {product.capabilities.map((cap) => (
                       <li
                         key={cap}
-                        className="flex items-start gap-3 text-sm text-white/55"
+                        className="flex items-start gap-3 text-sm text-muted"
                       >
                         <svg
                           width="16"
@@ -104,7 +104,7 @@ export default function AiProjectsPage() {
                     {product.stack.map((tech) => (
                       <span
                         key={tech}
-                        className="rounded-md border border-white/8 bg-white/[0.03] px-2.5 py-1 font-mono text-[0.68rem] text-white/45"
+                        className="rounded-md border border-white/8 bg-white/[0.03] px-2.5 py-1 font-mono text-[0.68rem] text-muted"
                       >
                         {tech}
                       </span>
@@ -120,7 +120,7 @@ export default function AiProjectsPage() {
             <h2 className="mx-auto mt-5 max-w-2xl font-display text-3xl font-semibold tracking-tight text-balance">
               Full case studies, demos, and early access are on the way
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-white/55">
+            <p className="mx-auto mt-4 max-w-xl text-muted">
               Both products will be built in public shortly. Would you like a
               preview, or to become an early design partner?
             </p>

@@ -56,7 +56,7 @@ export function SocialLinks({
               "inline-flex items-center justify-center transition-all duration-300",
               isBadge
                 ? "opacity-75 hover:opacity-100"
-                : "text-white/55 hover:-translate-y-0.5 hover:text-white"
+                : "text-muted hover:-translate-y-0.5 hover:text-fg"
             )}
           >
             {isBadge ? (

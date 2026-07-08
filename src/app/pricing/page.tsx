@@ -81,18 +81,18 @@ export default function PricingPage() {
                   </span>
                 )}
 
-                <h2 className="font-display text-xl font-semibold text-white">
+                <h2 className="font-display text-xl font-semibold text-fg">
                   {tier.name}
                 </h2>
                 <p className="mt-5 flex items-baseline gap-2">
-                  <span className="font-display text-5xl font-bold tracking-tight text-white">
+                  <span className="font-display text-5xl font-bold tracking-tight text-fg">
                     {tier.price}
                   </span>
                 </p>
-                <p className="mt-1.5 font-mono text-xs text-white/40">
+                <p className="mt-1.5 font-mono text-xs text-muted">
                   {tier.period}
                 </p>
-                <p className="mt-5 text-sm leading-relaxed text-white/55">
+                <p className="mt-5 text-sm leading-relaxed text-muted">
                   {tier.description}
                 </p>
 
@@ -100,7 +100,7 @@ export default function PricingPage() {
                   {tier.features.map((f) => (
                     <li
                       key={f}
-                      className="flex items-start gap-3 text-sm text-white/60"
+                      className="flex items-start gap-3 text-sm text-muted"
                     >
                       <svg
                         width="15"
@@ -142,7 +142,7 @@ export default function PricingPage() {
           </Reveal>
 
           <Reveal className="mt-12 text-center">
-            <p className="mx-auto max-w-xl text-sm text-white/45">
+            <p className="mx-auto max-w-xl text-sm text-muted">
               Enterprise replatforms and multi-quarter programmes are scoped
               individually. Every engagement starts with a free 30-minute call:
               no pitch deck, simply an honest assessment of whether I am the
@@ -171,7 +171,7 @@ export default function PricingPage() {
                 key={faq.q}
                 className="group rounded-2xl border border-line bg-card open:border-green/25"
               >
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-7 py-5 font-display font-semibold text-white [&::-webkit-details-marker]:hidden">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-7 py-5 font-display font-semibold text-fg [&::-webkit-details-marker]:hidden">
                   {faq.q}
                   <svg
                     width="16"
@@ -189,7 +189,7 @@ export default function PricingPage() {
                     />
                   </svg>
                 </summary>
-                <p className="px-7 pb-6 text-sm leading-relaxed text-white/55">
+                <p className="px-7 pb-6 text-sm leading-relaxed text-muted">
                   {faq.a}
                 </p>
               </details>

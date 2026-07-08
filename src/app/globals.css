@@ -1,16 +1,21 @@
 @import "tailwindcss";
 
-@theme inline {
+@theme {
   /* ---- Color tokens ---- */
+  /* Plain (non-inline) so Tailwind emits var()-based utilities that can be
+     re-themed at runtime via the .light class override below. */
   --color-bg: #0a0a0a;
   --color-bg-soft: #0f0f14;
   --color-card: #111118;
   --color-line: rgba(255, 255, 255, 0.06);
-  --color-muted: #a1a1aa;
+  --color-fg: #ffffff;
+  --color-muted: #b6b6c0;
   --color-green: #00ff87;
   --color-purple: #6d4caf;
   --color-gold: #c95f52;
+}
 
+@theme inline {
   /* ---- Fonts ---- */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui,
@@ -65,9 +70,31 @@ html {
   scroll-behavior: smooth;
 }
 
+:root {
+  color-scheme: dark;
+  --scrollbar-track: #0a0a0a;
+  --scrollbar-thumb: #26262e;
+  --scrollbar-thumb-hover: #3a3a44;
+  --grid-line: rgba(255, 255, 255, 0.035);
+}
+
+.light {
+  --color-bg: #ffffff;
+  --color-bg-soft: #f5f5f7;
+  --color-card: #f7f7f9;
+  --color-line: rgba(0, 0, 0, 0.08);
+  --color-fg: #0a0a0a;
+  --color-muted: #52525b;
+  color-scheme: light;
+  --scrollbar-track: #f5f5f7;
+  --scrollbar-thumb: #d4d4d8;
+  --scrollbar-thumb-hover: #a1a1aa;
+  --grid-line: rgba(0, 0, 0, 0.05);
+}
+
 body {
   background: var(--color-bg);
-  color: #fff;
+  color: var(--color-fg);
   font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   overflow-x: clip;
@@ -82,15 +109,15 @@ body {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0a0a;
+  background: var(--scrollbar-track);
 }
 ::-webkit-scrollbar-thumb {
-  background: #26262e;
+  background: var(--scrollbar-thumb);
   border-radius: 8px;
-  border: 2px solid #0a0a0a;
+  border: 2px solid var(--scrollbar-track);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #3a3a44;
+  background: var(--scrollbar-thumb-hover);
 }
 
 :focus-visible {
@@ -135,8 +162,8 @@ body {
 
 /* Faint blueprint grid used behind CTA panels */
 @utility grid-bg {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-image: linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
   background-size: 44px 44px;
 }
 
@@ -155,7 +182,7 @@ body {
 
 /* Long-form legal / blog prose */
 @utility prose-dark {
-  color: rgba(255, 255, 255, 0.72);
+  color: var(--color-muted);
   line-height: 1.85;
   font-size: 1.0625rem;
 
@@ -163,7 +190,7 @@ body {
     font-family: var(--font-space-grotesk), ui-sans-serif, sans-serif;
     font-size: 1.6rem;
     font-weight: 600;
-    color: #fff;
+    color: var(--color-fg);
     margin-top: 2.75rem;
     margin-bottom: 1rem;
     letter-spacing: -0.01em;
@@ -199,7 +226,7 @@ body {
     background: var(--color-green);
   }
   & strong {
-    color: #fff;
+    color: var(--color-fg);
     font-weight: 600;
   }
   & a {
@@ -219,7 +246,7 @@ body {
   & blockquote {
     border-left: 2px solid var(--color-purple);
     padding-left: 1.25rem;
-    color: rgba(255, 255, 255, 0.85);
+    color: var(--color-fg);
     font-style: italic;
     margin: 2rem 0;
   }

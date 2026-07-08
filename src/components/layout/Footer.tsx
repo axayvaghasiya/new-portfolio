@@ -13,7 +13,7 @@ export function Footer() {
           {/* Brand */}
           <div>
             <Logo />
-            <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/50">
+            <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted">
               {site.role} & {site.subRole.split(" · ")[0]}. Building commerce
               systems that are fast for humans and legible to machines.
             </p>
@@ -28,7 +28,7 @@ export function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm text-white/55 transition-colors hover:text-white"
+                    className="text-sm text-muted transition-colors hover:text-fg"
                   >
                     {item.label}
                   </Link>
@@ -45,7 +45,7 @@ export function Footer() {
                 <li key={s.slug}>
                   <Link
                     href="/services"
-                    className="text-sm text-white/55 transition-colors hover:text-white"
+                    className="text-sm text-muted transition-colors hover:text-fg"
                   >
                     {s.title}
                   </Link>
@@ -59,11 +59,11 @@ export function Footer() {
             <p className="eyebrow mb-5">Contact</p>
             <a
               href={`mailto:${site.email}`}
-              className="font-mono text-sm break-all text-white/70 underline decoration-green/30 underline-offset-4 transition-colors hover:text-green"
+              className="font-mono text-sm break-all text-muted underline decoration-green/30 underline-offset-4 transition-colors hover:text-green"
             >
               {site.email}
             </a>
-            <p className="mt-4 text-sm text-white/45">{site.location}</p>
+            <p className="mt-4 text-sm text-muted">{site.location}</p>
             <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-green/25 bg-green/10 px-4 py-1.5 font-mono text-[0.7rem] tracking-wide text-green uppercase">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping-slow rounded-full bg-green opacity-70" />
@@ -75,7 +75,7 @@ export function Footer() {
         </div>
 
         <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-line pt-8 md:flex-row">
-          <p className="font-mono text-xs text-white/35">
+          <p className="font-mono text-xs text-muted">
             © {new Date().getFullYear()} {site.name}. All rights reserved.
           </p>
           <ul className="flex flex-wrap items-center gap-6">
@@ -83,7 +83,7 @@ export function Footer() {
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  className="font-mono text-xs text-white/35 transition-colors hover:text-white/70"
+                  className="font-mono text-xs text-muted transition-colors hover:text-muted"
                 >
                   {l.label}
                 </Link>

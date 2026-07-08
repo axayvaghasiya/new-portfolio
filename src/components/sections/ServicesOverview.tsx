@@ -77,13 +77,13 @@ export function ServicesOverview() {
                 <p className={cn("font-mono text-sm font-semibold", a.number)}>
                   {service.number}
                 </p>
-                <h3 className="mt-4 font-display text-xl font-semibold tracking-tight text-white">
+                <h3 className="mt-4 font-display text-xl font-semibold tracking-tight text-fg">
                   {service.title}
                 </h3>
                 <p className={cn("mt-1 font-mono text-xs", a.number)}>
                   {service.tagline}
                 </p>
-                <p className="mt-4 text-sm leading-relaxed text-white/55">
+                <p className="mt-4 text-sm leading-relaxed text-muted">
                   {service.description}
                 </p>
 
@@ -91,7 +91,7 @@ export function ServicesOverview() {
                   {service.deliverables.map((d) => (
                     <li
                       key={d}
-                      className="flex items-start gap-2.5 text-[0.83rem] text-white/50"
+                      className="flex items-start gap-2.5 text-[0.83rem] text-muted"
                     >
                       <span
                         className={cn("mt-[0.55em] h-px w-3.5 shrink-0", a.bar)}

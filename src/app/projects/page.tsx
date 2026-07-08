@@ -41,7 +41,7 @@ export default function ProjectsPage() {
                   <span className="absolute inline-flex h-full w-full animate-ping-slow rounded-full bg-purple opacity-70" />
                   <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-purple" />
                 </span>
-                <p className="font-display font-semibold text-white">
+                <p className="font-display font-semibold text-fg">
                   Building the AI side too:{" "}
                   <span className="text-purple">
                     two AI commerce products in development
@@ -67,22 +67,22 @@ export default function ProjectsPage() {
               >
                 <div>
                   <div className="flex flex-wrap items-center gap-3">
-                    <span className="font-mono text-sm text-white/30">
+                    <span className="font-mono text-sm text-muted">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <Badge accent={project.accent}>{project.category}</Badge>
-                    <span className="font-mono text-xs text-white/30">
+                    <span className="font-mono text-xs text-muted">
                       {project.year}
                     </span>
                   </div>
 
-                  <h2 className="mt-5 font-display text-3xl font-semibold tracking-tight text-white md:text-4xl">
+                  <h2 className="mt-5 font-display text-3xl font-semibold tracking-tight text-fg md:text-4xl">
                     {project.title}
                   </h2>
-                  <p className="mt-2 font-mono text-xs text-white/40">
+                  <p className="mt-2 font-mono text-xs text-muted">
                     {project.client}
                   </p>
-                  <p className="mt-5 text-base leading-relaxed text-white/60">
+                  <p className="mt-5 text-base leading-relaxed text-muted">
                     {project.summary}
                   </p>
 
@@ -91,7 +91,7 @@ export default function ProjectsPage() {
                       <h3 className="font-mono text-xs tracking-[0.2em] text-gold uppercase">
                         Problem
                       </h3>
-                      <p className="mt-3 text-sm leading-relaxed text-white/50">
+                      <p className="mt-3 text-sm leading-relaxed text-muted">
                         {project.problem}
                       </p>
                     </div>
@@ -99,7 +99,7 @@ export default function ProjectsPage() {
                       <h3 className="font-mono text-xs tracking-[0.2em] text-green uppercase">
                         Solution
                       </h3>
-                      <p className="mt-3 text-sm leading-relaxed text-white/50">
+                      <p className="mt-3 text-sm leading-relaxed text-muted">
                         {project.solution}
                       </p>
                     </div>
@@ -109,7 +109,7 @@ export default function ProjectsPage() {
                     {project.stack.map((tech) => (
                       <span
                         key={tech}
-                        className="rounded-md border border-white/8 bg-white/[0.03] px-2.5 py-1 font-mono text-[0.68rem] text-white/45"
+                        className="rounded-md border border-white/8 bg-white/[0.03] px-2.5 py-1 font-mono text-[0.68rem] text-muted"
                       >
                         {tech}
                       </span>
@@ -127,7 +127,7 @@ export default function ProjectsPage() {
                       <p className="font-display text-3xl font-bold text-gradient-green md:text-4xl">
                         {r.value}
                       </p>
-                      <p className="mt-2 font-mono text-[0.65rem] leading-relaxed tracking-[0.12em] text-white/40 uppercase">
+                      <p className="mt-2 font-mono text-[0.65rem] leading-relaxed tracking-[0.12em] text-muted uppercase">
                         {r.label}
                       </p>
                     </div>
@@ -141,7 +141,7 @@ export default function ProjectsPage() {
 
       <section className="pt-8 pb-4 text-center">
         <Reveal>
-          <p className="text-white/50">
+          <p className="text-muted">
             Want the full story behind any of these?
           </p>
           <div className="mt-6">

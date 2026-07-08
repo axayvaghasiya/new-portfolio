@@ -1,11 +1,13 @@
 import type { Metadata, Viewport } from "next";
 import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
+import { ThemeProvider } from "next-themes";
 import "./globals.css";
 import { site } from "@/lib/site";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import SmoothScroll from "@/components/layout/SmoothScroll";
 import { TawkChat } from "@/components/layout/TawkChat";
+import { ThemeToggle } from "@/components/layout/ThemeToggle";
 // import { WhatsAppChat } from "@/components/layout/WhatsAppChat";
 
 const spaceGrotesk = Space_Grotesk({
@@ -61,7 +63,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: "#0a0a0a",
-  colorScheme: "dark",
+  colorScheme: "dark light",
 };
 
 export default function RootLayout({
@@ -73,15 +75,19 @@ export default function RootLayout({
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`dark ${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable}`}
+      className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable}`}
+      suppressHydrationWarning
     >
       <body className="antialiased">
-        <SmoothScroll />
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
-        {/* <WhatsAppChat /> */}
-        <TawkChat />
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+          <SmoothScroll />
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+          <ThemeToggle />
+          {/* <WhatsAppChat /> */}
+          <TawkChat />
+        </ThemeProvider>
       </body>
     </html>
   );

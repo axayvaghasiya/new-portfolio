@@ -35,7 +35,7 @@ export function SectionHeader({
         {title}
       </h2>
       {description && (
-        <p className="mt-5 text-lg leading-relaxed text-white/60">{description}</p>
+        <p className="mt-5 text-lg leading-relaxed text-muted">{description}</p>
       )}
     </Reveal>
   );

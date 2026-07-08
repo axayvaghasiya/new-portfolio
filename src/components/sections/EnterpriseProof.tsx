@@ -16,10 +16,10 @@ const logLines = [
   {
     time: "02:00:00",
     tag: "INIT",
-    tagClass: "text-white/70",
+    tagClass: "text-muted",
     text: (
       <>
-        cutover window opened · <span className="text-white">dual-run mode</span>
+        cutover window opened · <span className="text-fg">dual-run mode</span>
       </>
     ),
   },
@@ -35,7 +35,7 @@ const logLines = [
     tagClass: "text-purple",
     text: (
       <>
-        <span className="text-white">40,182 SKUs</span> verified against ERP
+        <span className="text-fg">40,182 SKUs</span> verified against ERP
       </>
     ),
   },
@@ -45,7 +45,7 @@ const logLines = [
     tagClass: "text-gold",
     text: (
       <>
-        pass 1/3 complete · drift: <span className="text-white">0 records</span>
+        pass 1/3 complete · drift: <span className="text-fg">0 records</span>
       </>
     ),
   },
@@ -56,7 +56,7 @@ const logLines = [
     text: (
       <>
         63 in-flight orders captured · lost:{" "}
-        <span className="text-white">0</span>
+        <span className="text-fg">0</span>
       </>
     ),
   },
@@ -66,7 +66,7 @@ const logLines = [
     tagClass: "text-gold",
     text: (
       <>
-        pass 3/3 complete · drift: <span className="text-white">0 records</span>
+        pass 3/3 complete · drift: <span className="text-fg">0 records</span>
       </>
     ),
   },
@@ -291,10 +291,10 @@ export function EnterpriseProof() {
         {/* Live client storefronts — real screenshots, publicly verifiable */}
         <div className="mb-16">
           <Reveal>
-            <p className="mb-6 flex flex-wrap items-center gap-3 font-mono text-[0.68rem] tracking-[0.24em] text-white/40 uppercase">
+            <p className="mb-6 flex flex-wrap items-center gap-3 font-mono text-[0.68rem] tracking-[0.24em] text-muted uppercase">
               <span className="inline-block h-px w-8 bg-green" />
               Shipped for brands including
-              <span className="tracking-normal text-white/25 normal-case">
+              <span className="tracking-normal text-muted normal-case">
                 · live storefronts, click any card to visit
               </span>
             </p>
@@ -320,7 +320,7 @@ export function EnterpriseProof() {
                   <span className="h-2 w-2 rounded-full bg-gold/70" />
                   <span className="h-2 w-2 rounded-full bg-purple/70" />
                   <span className="h-2 w-2 rounded-full bg-green/70" />
-                  <span className="ml-2.5 truncate font-mono text-[0.65rem] text-white/40">
+                  <span className="ml-2.5 truncate font-mono text-[0.65rem] text-muted">
                     {brand.domain}
                   </span>
                   <svg
@@ -329,7 +329,7 @@ export function EnterpriseProof() {
                     viewBox="0 0 10 10"
                     fill="none"
                     aria-hidden
-                    className="ml-auto shrink-0 text-white/30 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-white/80"
+                    className="ml-auto shrink-0 text-muted transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-muted"
                   >
                     <path
                       d="M2 8L8 2M8 2H3.5M8 2v4.5"
@@ -354,7 +354,7 @@ export function EnterpriseProof() {
                 </span>
 
                 <span className="flex items-center justify-between px-4 py-3">
-                  <span className="flex items-center gap-2.5 font-display text-sm font-semibold tracking-[0.12em] text-white">
+                  <span className="flex items-center gap-2.5 font-display text-sm font-semibold tracking-[0.12em] text-fg">
                     <span
                       className={cn(
                         "h-1.5 w-1.5 rounded-full",
@@ -363,7 +363,7 @@ export function EnterpriseProof() {
                     />
                     {brand.name}
                   </span>
-                  <span className="font-mono text-[0.62rem] tracking-[0.16em] text-white/35 uppercase transition-colors duration-300 group-hover:text-green">
+                  <span className="font-mono text-[0.62rem] tracking-[0.16em] text-muted uppercase transition-colors duration-300 group-hover:text-green">
                     Visit live site
                   </span>
                 </span>
@@ -380,7 +380,7 @@ export function EnterpriseProof() {
                 <span className="h-3 w-3 rounded-full bg-gold/80" />
                 <span className="h-3 w-3 rounded-full bg-purple/80" />
                 <span className="h-3 w-3 rounded-full bg-green/80" />
-                <span className="ml-3 font-mono text-xs text-white/40">
+                <span className="ml-3 font-mono text-xs text-muted">
                   b2b-replatform · cutover.log
                 </span>
                 <span className="ml-auto rounded-md border border-green/25 bg-green/10 px-2 py-0.5 font-mono text-[0.6rem] tracking-[0.14em] text-green uppercase">
@@ -391,14 +391,14 @@ export function EnterpriseProof() {
               <div className="flex-1 space-y-2.5 px-5 py-6 font-mono text-[0.8rem] leading-relaxed md:px-7">
                 {logLines.map((line) => (
                   <p key={line.time} className="flex flex-wrap gap-x-3">
-                    <span className="text-white/30">{line.time}</span>
+                    <span className="text-muted">{line.time}</span>
                     <span className={cn("w-14 font-semibold", line.tagClass)}>
                       {line.tag}
                     </span>
-                    <span className="flex-1 text-white/60">{line.text}</span>
+                    <span className="flex-1 text-muted">{line.text}</span>
                   </p>
                 ))}
-                <p aria-hidden className="text-white/30">
+                <p aria-hidden className="text-muted">
                   <span className="mr-1 inline-block h-3.5 w-2 translate-y-0.5 animate-pulse bg-green/70" />
                 </p>
               </div>
@@ -420,7 +420,7 @@ export function EnterpriseProof() {
                 ))}
               </div>
 
-              <figcaption className="border-t border-line bg-white/[0.02] px-5 py-4 text-sm leading-relaxed text-white/45 md:px-7">
+              <figcaption className="border-t border-line bg-white/[0.02] px-5 py-4 text-sm leading-relaxed text-muted md:px-7">
                 Excerpt from a real $40M wholesale cutover: eight weeks of
                 parallel running, dealers migrated in cohorts, and not a single
                 order lost.
@@ -438,10 +438,10 @@ export function EnterpriseProof() {
                 <p className={cn("font-display text-3xl font-semibold", m.valueClass)}>
                   {m.value}
                 </p>
-                <p className="mt-1 font-display text-sm font-semibold text-white">
+                <p className="mt-1 font-display text-sm font-semibold text-fg">
                   {m.label}
                 </p>
-                <p className="mt-1.5 text-[0.82rem] leading-relaxed text-white/45">
+                <p className="mt-1.5 text-[0.82rem] leading-relaxed text-muted">
                   {m.context}
                 </p>
               </div>
@@ -457,10 +457,10 @@ export function EnterpriseProof() {
               className="rounded-2xl border border-line bg-bg-soft p-5"
             >
               <span className={cn("inline-flex", s.accent)}>{s.icon}</span>
-              <h3 className="mt-3 font-display text-[0.95rem] font-semibold text-white">
+              <h3 className="mt-3 font-display text-[0.95rem] font-semibold text-fg">
                 {s.title}
               </h3>
-              <p className="mt-1.5 text-[0.8rem] leading-relaxed text-white/45">
+              <p className="mt-1.5 text-[0.8rem] leading-relaxed text-muted">
                 {s.body}
               </p>
             </div>
@@ -489,10 +489,10 @@ export function EnterpriseProof() {
                 {v.icon}
               </span>
               <span className="min-w-0">
-                <span className="font-display text-base font-semibold text-white">
+                <span className="font-display text-base font-semibold text-fg">
                   {v.title}
                 </span>
-                <span className="mt-1.5 block text-sm leading-relaxed text-white/50">
+                <span className="mt-1.5 block text-sm leading-relaxed text-muted">
                   {v.body}
                 </span>
                 <span
@@ -525,7 +525,7 @@ export function EnterpriseProof() {
         </Reveal>
 
         <Reveal className="mt-10 flex flex-col items-center gap-6 text-center">
-          <p className="max-w-2xl font-mono text-xs leading-relaxed text-white/40">
+          <p className="max-w-2xl font-mono text-xs leading-relaxed text-muted">
             The storefronts above are live today; enterprise case-study clients
             remain under NDA. Every number on this page comes from a real
             engagement, with references available for serious enquiries.

@@ -82,7 +82,7 @@ export default function ServicesPage() {
                   </p>
 
                   <div>
-                    <h2 className="font-display text-2xl font-semibold tracking-tight text-white md:text-3xl">
+                    <h2 className="font-display text-2xl font-semibold tracking-tight text-fg md:text-3xl">
                       {service.title}
                     </h2>
                     <p
@@ -93,20 +93,20 @@ export default function ServicesPage() {
                     >
                       {service.tagline}
                     </p>
-                    <p className="mt-5 leading-relaxed text-white/55">
+                    <p className="mt-5 leading-relaxed text-muted">
                       {service.description}
                     </p>
                   </div>
 
                   <div className="lg:pt-2">
-                    <h3 className="font-mono text-xs tracking-[0.2em] text-white/40 uppercase">
+                    <h3 className="font-mono text-xs tracking-[0.2em] text-muted uppercase">
                       What you get
                     </h3>
                     <ul className="mt-5 space-y-3.5">
                       {service.deliverables.map((d) => (
                         <li
                           key={d}
-                          className="flex items-start gap-3 text-sm text-white/60"
+                          className="flex items-start gap-3 text-sm text-muted"
                         >
                           <span
                             className={cn(
@@ -148,10 +148,10 @@ export default function ServicesPage() {
                 <p className="font-mono text-sm font-semibold text-green">
                   {p.step}
                 </p>
-                <h3 className="mt-4 font-display text-xl font-semibold text-white">
+                <h3 className="mt-4 font-display text-xl font-semibold text-fg">
                   {p.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-white/55">
+                <p className="mt-3 text-sm leading-relaxed text-muted">
                   {p.body}
                 </p>
                 {i < process.length - 1 && (

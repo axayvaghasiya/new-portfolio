@@ -24,7 +24,7 @@ const MAX_ATTACHMENT_BYTES = 4 * 1024 * 1024; // 4MB
 const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
 const inputCls =
-  "w-full rounded-xl border border-line bg-bg px-5 py-3.5 text-sm text-white placeholder:text-white/25 transition-colors duration-300 focus:border-green/50 focus:outline-none";
+  "w-full rounded-xl border border-line bg-bg px-5 py-3.5 text-sm text-fg placeholder:text-muted transition-colors duration-300 focus:border-green/50 focus:outline-none";
 
 type Status = "idle" | "submitting" | "sent" | "error";
 
@@ -121,10 +121,10 @@ export function ContactForm() {
             strokeLinejoin="round"
           />
         </svg>
-        <h2 className="mt-6 font-display text-2xl font-semibold text-white">
+        <h2 className="mt-6 font-display text-2xl font-semibold text-fg">
           Thank you — your message is on its way
         </h2>
-        <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-white/55">
+        <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-muted">
           I&apos;ve received your enquiry and will reply within 24 hours. If it&apos;s
           urgent, you can also reach me directly at{" "}
           <a
@@ -138,7 +138,7 @@ export function ContactForm() {
         <button
           type="button"
           onClick={() => setStatus("idle")}
-          className="mt-8 font-mono text-xs tracking-[0.18em] text-white/40 uppercase transition-colors hover:text-white"
+          className="mt-8 font-mono text-xs tracking-[0.18em] text-muted uppercase transition-colors hover:text-fg"
         >
           ← Send another message
         </button>
@@ -162,7 +162,7 @@ export function ContactForm() {
 
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor="name" className="mb-2 block font-mono text-xs tracking-wide text-white/45 uppercase">
+          <label htmlFor="name" className="mb-2 block font-mono text-xs tracking-wide text-muted uppercase">
             Name *
           </label>
           <input
@@ -175,7 +175,7 @@ export function ContactForm() {
           />
         </div>
         <div>
-          <label htmlFor="email" className="mb-2 block font-mono text-xs tracking-wide text-white/45 uppercase">
+          <label htmlFor="email" className="mb-2 block font-mono text-xs tracking-wide text-muted uppercase">
             Email *
           </label>
           <input
@@ -192,7 +192,7 @@ export function ContactForm() {
 
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor="company" className="mb-2 block font-mono text-xs tracking-wide text-white/45 uppercase">
+          <label htmlFor="company" className="mb-2 block font-mono text-xs tracking-wide text-muted uppercase">
             Company / Store
           </label>
           <input
@@ -204,7 +204,7 @@ export function ContactForm() {
           />
         </div>
         <div>
-          <label htmlFor="budget" className="mb-2 block font-mono text-xs tracking-wide text-white/45 uppercase">
+          <label htmlFor="budget" className="mb-2 block font-mono text-xs tracking-wide text-muted uppercase">
             Budget
           </label>
           <select id="budget" name="budget" defaultValue="" className={inputCls}>
@@ -221,7 +221,7 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="message" className="mb-2 block font-mono text-xs tracking-wide text-white/45 uppercase">
+        <label htmlFor="message" className="mb-2 block font-mono text-xs tracking-wide text-muted uppercase">
           Project details *
         </label>
         <textarea
@@ -236,17 +236,17 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="attachment" className="mb-2 block font-mono text-xs tracking-wide text-white/45 uppercase">
+        <label htmlFor="attachment" className="mb-2 block font-mono text-xs tracking-wide text-muted uppercase">
           Attachment (optional)
         </label>
         <label
           htmlFor="attachment"
           className="flex w-full cursor-pointer items-center justify-between gap-3 rounded-xl border border-dashed border-line bg-bg px-5 py-3.5 text-sm transition-colors duration-300 hover:border-green/40"
         >
-          <span className={fileName ? "text-white" : "text-white/35"}>
+          <span className={fileName ? "text-fg" : "text-muted"}>
             {fileName || "Brief, deck, or reference file — PDF, Word, PPT, or image"}
           </span>
-          <span className="shrink-0 rounded-full border border-line px-3 py-1 font-mono text-[0.65rem] tracking-wide text-white/50 uppercase">
+          <span className="shrink-0 rounded-full border border-line px-3 py-1 font-mono text-[0.65rem] tracking-wide text-muted uppercase">
             Browse
           </span>
         </label>
@@ -261,7 +261,7 @@ export function ContactForm() {
         {fileError ? (
           <p className="mt-2 text-xs text-gold">{fileError}</p>
         ) : (
-          <p className="mt-2 text-xs text-white/30">Max 4MB.</p>
+          <p className="mt-2 text-xs text-muted">Max 4MB.</p>
         )}
       </div>
 
@@ -287,7 +287,7 @@ export function ContactForm() {
       )}
 
       <div className="flex flex-wrap items-center justify-between gap-4 pt-2">
-        <p className="font-mono text-xs text-white/35">
+        <p className="font-mono text-xs text-muted">
           * Required · replies within 24h
         </p>
         <Button type="submit" size="lg" disabled={status === "submitting" || !!fileError}>

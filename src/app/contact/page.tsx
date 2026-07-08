@@ -56,11 +56,11 @@ export default function ContactPage() {
                   <p className="eyebrow mb-4">Direct</p>
                   <a
                     href={`mailto:${site.email}`}
-                    className="font-mono text-sm break-all text-white underline decoration-green/40 underline-offset-4 transition-colors hover:text-green"
+                    className="font-mono text-sm break-all text-fg underline decoration-green/40 underline-offset-4 transition-colors hover:text-green"
                   >
                     {site.email}
                   </a>
-                  <p className="mt-4 text-sm text-white/45">{site.location}</p>
+                  <p className="mt-4 text-sm text-muted">{site.location}</p>
                   <SocialLinks
                     className="mt-6"
                     badgeClassName="h-7"
@@ -79,10 +79,10 @@ export default function ContactPage() {
                       {e.step}
                     </p>
                     <div>
-                      <h3 className="font-display font-semibold text-white">
+                      <h3 className="font-display font-semibold text-fg">
                         {e.title}
                       </h3>
-                      <p className="mt-1.5 text-sm leading-relaxed text-white/50">
+                      <p className="mt-1.5 text-sm leading-relaxed text-muted">
                         {e.body}
                       </p>
                     </div>
@@ -95,9 +95,9 @@ export default function ContactPage() {
                   <p className="font-mono text-xs tracking-[0.18em] text-gold uppercase">
                     Currently booking
                   </p>
-                  <p className="mt-3 text-sm leading-relaxed text-white/60">
+                  <p className="mt-3 text-sm leading-relaxed text-muted">
                     I am taking on{" "}
-                    <span className="text-white">two new projects</span> this
+                    <span className="text-fg">two new projects</span> this
                     quarter. Audit sprints can usually start within a week.
                   </p>
                 </div>

@@ -107,10 +107,10 @@ export function ExperienceTimeline() {
                   <p className="font-mono text-sm font-semibold text-green">
                     {m.year}
                   </p>
-                  <h3 className="mt-2 font-display text-xl font-semibold tracking-tight text-white md:text-2xl">
+                  <h3 className="mt-2 font-display text-xl font-semibold tracking-tight text-fg md:text-2xl">
                     {m.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-white/55">
+                  <p className="mt-3 text-sm leading-relaxed text-muted">
                     {m.description}
                   </p>
                   <div

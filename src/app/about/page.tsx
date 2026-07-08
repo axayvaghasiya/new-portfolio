@@ -56,12 +56,12 @@ export default function AboutPage() {
       <section className="py-8 md:py-12">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid gap-16 lg:grid-cols-[1.3fr_1fr]">
-            <Reveal className="space-y-6 text-lg leading-relaxed text-white/65">
+            <Reveal className="space-y-6 text-lg leading-relaxed text-muted">
               <p>
                 I started writing commerce code in 2018, building Shopify
                 themes for local D2C brands. The lesson from those first
                 storefronts still drives everything I build:{" "}
-                <span className="text-white">
+                <span className="text-fg">
                   in commerce, engineering quality is measured at the checkout
                 </span>
                 . A handsome site that loads in four seconds is a handsome way
@@ -77,7 +77,7 @@ export default function AboutPage() {
               </p>
               <p>
                 Now I am focused on the next platform shift:{" "}
-                <span className="text-white">agentic commerce</span>. AI agents
+                <span className="text-fg">agentic commerce</span>. AI agents
                 are beginning to browse, compare, and buy on behalf of humans.
                 As a Google-certified AI professional with Anthropic MCP and
                 LangChain Deep Agents training, I help brands score their AI
@@ -104,10 +104,10 @@ export default function AboutPage() {
                     className="flex items-center justify-between gap-4 rounded-2xl border border-line bg-card px-6 py-5"
                   >
                     <div>
-                      <p className="font-display font-semibold text-white">
+                      <p className="font-display font-semibold text-fg">
                         {c.title}
                       </p>
-                      <p className="mt-1 font-mono text-xs text-white/40">
+                      <p className="mt-1 font-mono text-xs text-muted">
                         {c.issuer}
                       </p>
                     </div>
@@ -137,7 +137,7 @@ export default function AboutPage() {
                 <h3 className={`font-display text-xl font-semibold ${p.accent}`}>
                   {p.title}
                 </h3>
-                <p className="mt-4 text-sm leading-relaxed text-white/55">
+                <p className="mt-4 text-sm leading-relaxed text-muted">
                   {p.body}
                 </p>
               </Card>
@@ -158,14 +158,14 @@ export default function AboutPage() {
           <Reveal stagger={0.1} className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
             {Object.entries(stack).map(([group, items]) => (
               <div key={group}>
-                <h3 className="font-display text-lg font-semibold text-white">
+                <h3 className="font-display text-lg font-semibold text-fg">
                   {group}
                 </h3>
                 <ul className="mt-5 space-y-2.5">
                   {items.map((item) => (
                     <li
                       key={item}
-                      className="flex items-center gap-2.5 font-mono text-[0.8rem] text-white/50"
+                      className="flex items-center gap-2.5 font-mono text-[0.8rem] text-muted"
                     >
                       <span className="h-1 w-1 rounded-full bg-green/70" />
                       {item}
@@ -196,10 +196,10 @@ export default function AboutPage() {
                 <p className="font-mono text-sm font-semibold text-green">
                   {m.year}
                 </p>
-                <h3 className="font-display font-semibold text-white">
+                <h3 className="font-display font-semibold text-fg">
                   {m.title}
                 </h3>
-                <p className="text-sm leading-relaxed text-white/50">
+                <p className="text-sm leading-relaxed text-muted">
                   {m.description}
                 </p>
               </div>

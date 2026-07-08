@@ -20,8 +20,8 @@ const variants = {
   primary:
     "bg-green text-black hover:shadow-[0_0_36px_rgba(0,255,135,0.35)] hover:-translate-y-0.5 active:translate-y-0",
   outline:
-    "border border-white/15 text-white hover:border-green/60 hover:text-green hover:-translate-y-0.5 active:translate-y-0",
-  ghost: "text-muted hover:text-white",
+    "border border-white/15 text-fg hover:border-green/60 hover:text-green hover:-translate-y-0.5 active:translate-y-0",
+  ghost: "text-muted hover:text-fg",
 };
 
 const sizes = {

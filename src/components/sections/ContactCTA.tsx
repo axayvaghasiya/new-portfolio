@@ -30,7 +30,7 @@ export function ContactCTA() {
                 Ready to scale your{" "}
                 <span className="text-gradient-green">commerce</span>?
               </h2>
-              <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-white/55">
+              <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted">
                 One senior engineer, direct communication, and outcomes
                 measured in revenue. I am currently booking projects for this
                 quarter.
@@ -47,7 +47,7 @@ export function ContactCTA() {
                   Email me directly
                 </Button>
               </div>
-              <p className="mt-8 font-mono text-xs text-white/35">
+              <p className="mt-8 font-mono text-xs text-muted">
                 Average reply time: under 24 hours
               </p>
             </div>

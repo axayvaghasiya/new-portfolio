@@ -38,15 +38,15 @@ export function FeaturedProjects() {
               <Card glow={project.accent} className="flex h-full flex-col">
                 <div className="flex items-center justify-between">
                   <Badge accent={project.accent}>{project.category}</Badge>
-                  <span className="font-mono text-xs text-white/30">
+                  <span className="font-mono text-xs text-muted">
                     {project.year}
                   </span>
                 </div>
 
-                <h3 className="mt-6 font-display text-2xl leading-snug font-semibold tracking-tight text-white transition-colors duration-300 group-hover:text-green">
+                <h3 className="mt-6 font-display text-2xl leading-snug font-semibold tracking-tight text-fg transition-colors duration-300 group-hover:text-green">
                   {project.title}
                 </h3>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-white/55">
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">
                   {project.summary}
                 </p>
 
@@ -56,7 +56,7 @@ export function FeaturedProjects() {
                       <dd className="font-display text-xl font-semibold text-gold">
                         {r.value}
                       </dd>
-                      <dt className="mt-0.5 font-mono text-[0.6rem] tracking-wide text-white/40 uppercase">
+                      <dt className="mt-0.5 font-mono text-[0.6rem] tracking-wide text-muted uppercase">
                         {r.label}
                       </dt>
                     </div>
@@ -67,13 +67,13 @@ export function FeaturedProjects() {
                   {project.stack.slice(0, 3).map((tech) => (
                     <span
                       key={tech}
-                      className="rounded-md border border-white/8 bg-white/[0.03] px-2.5 py-1 font-mono text-[0.65rem] text-white/45"
+                      className="rounded-md border border-white/8 bg-white/[0.03] px-2.5 py-1 font-mono text-[0.65rem] text-muted"
                     >
                       {tech}
                     </span>
                   ))}
                   {project.stack.length > 3 && (
-                    <span className="px-1 py-1 font-mono text-[0.65rem] text-white/30">
+                    <span className="px-1 py-1 font-mono text-[0.65rem] text-muted">
                       +{project.stack.length - 3}
                     </span>
                   )}

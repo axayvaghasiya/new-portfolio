@@ -45,7 +45,7 @@ export function Logo({ className }: { className?: string }) {
       href="/"
       aria-label="Akshay Vaghasiya, home"
       className={cn(
-        "group inline-flex items-center text-white transition-opacity duration-300 hover:opacity-80",
+        "group inline-flex items-center text-fg transition-opacity duration-300 hover:opacity-80",
         className
       )}
     >

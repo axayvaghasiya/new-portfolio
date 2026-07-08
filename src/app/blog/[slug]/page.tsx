@@ -88,14 +88,14 @@ export default async function BlogPostPage({
         <Reveal>
           <Link
             href="/blog"
-            className="font-mono text-xs tracking-[0.18em] text-white/40 uppercase transition-colors hover:text-green"
+            className="font-mono text-xs tracking-[0.18em] text-muted uppercase transition-colors hover:text-green"
           >
             ← All articles
           </Link>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <Badge accent={post.accent}>{post.tag}</Badge>
-            <span className="font-mono text-xs text-white/35">
+            <span className="font-mono text-xs text-muted">
               {formatDate(post.date)} · {post.readingTime}
             </span>
           </div>
@@ -103,7 +103,7 @@ export default async function BlogPostPage({
           <h1 className="mt-6 font-display text-4xl leading-tight font-bold tracking-[-0.02em] text-balance md:text-5xl">
             {post.title}
           </h1>
-          <p className="mt-6 text-lg leading-relaxed text-white/55">
+          <p className="mt-6 text-lg leading-relaxed text-muted">
             {post.excerpt}
           </p>
 
@@ -118,10 +118,10 @@ export default async function BlogPostPage({
         <Reveal className="mt-16 space-y-8">
           <div className="rounded-2xl border border-line bg-card p-8">
             <p className="eyebrow mb-3">Written by</p>
-            <p className="font-display text-xl font-semibold text-white">
+            <p className="font-display text-xl font-semibold text-fg">
               {site.name}
             </p>
-            <p className="mt-2 text-sm leading-relaxed text-white/50">
+            <p className="mt-2 text-sm leading-relaxed text-muted">
               {site.role} · {site.subRole}. Building commerce systems that are
               fast for humans and legible to machines.
             </p>
@@ -136,10 +136,10 @@ export default async function BlogPostPage({
             href={`/blog/${next.slug}`}
             className="group block rounded-2xl border border-line bg-bg-soft p-8 transition-colors duration-300 hover:border-green/30"
           >
-            <p className="font-mono text-xs tracking-[0.18em] text-white/40 uppercase">
+            <p className="font-mono text-xs tracking-[0.18em] text-muted uppercase">
               Read next
             </p>
-            <p className="mt-3 font-display text-xl font-semibold text-white transition-colors duration-300 group-hover:text-green">
+            <p className="mt-3 font-display text-xl font-semibold text-fg transition-colors duration-300 group-hover:text-green">
               {next.title}
             </p>
           </Link>

@@ -56,7 +56,7 @@ export function Navbar() {
                   "relative rounded-full px-4 py-2 text-sm transition-colors duration-300",
                   isActive(item.href)
                     ? "text-green"
-                    : "text-white/60 hover:text-white"
+                    : "text-muted hover:text-fg"
                 )}
               >
                 {item.label}
@@ -83,19 +83,19 @@ export function Navbar() {
           <span className="relative block h-4 w-6">
             <span
               className={cn(
-                "absolute left-0 top-0 h-[1.5px] w-6 bg-white transition-all duration-300",
+                "absolute left-0 top-0 h-[1.5px] w-6 bg-fg transition-all duration-300",
                 open && "top-[7px] rotate-45"
               )}
             />
             <span
               className={cn(
-                "absolute left-0 top-[7px] h-[1.5px] w-4 bg-white transition-all duration-300",
+                "absolute left-0 top-[7px] h-[1.5px] w-4 bg-fg transition-all duration-300",
                 open && "opacity-0"
               )}
             />
             <span
               className={cn(
-                "absolute left-0 top-[14px] h-[1.5px] w-6 bg-white transition-all duration-300",
+                "absolute left-0 top-[14px] h-[1.5px] w-6 bg-fg transition-all duration-300",
                 open && "top-[7px] -rotate-45"
               )}
             />
@@ -125,10 +125,10 @@ export function Navbar() {
                 href={item.href}
                 className={cn(
                   "flex items-baseline gap-4 border-b border-line py-4 font-display text-3xl font-semibold tracking-tight",
-                  isActive(item.href) ? "text-green" : "text-white"
+                  isActive(item.href) ? "text-green" : "text-fg"
                 )}
               >
-                <span className="font-mono text-xs text-white/30">
+                <span className="font-mono text-xs text-muted">
                   0{i + 1}
                 </span>
                 {item.label}
@@ -145,7 +145,7 @@ export function Navbar() {
           <SocialLinks badgeClassName="h-6" iconClassName="h-5 w-5" />
           <a
             href={`mailto:${site.email}`}
-            className="font-mono text-xs text-white/50 underline underline-offset-4"
+            className="font-mono text-xs text-muted underline underline-offset-4"
           >
             {site.email}
           </a>

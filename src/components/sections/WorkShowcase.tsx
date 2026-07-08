@@ -47,7 +47,7 @@ function ShowcaseCard({
           viewBox="0 0 14 14"
           fill="none"
           aria-hidden
-          className="text-white/25 transition-all duration-300 group-hover:translate-x-0.5 group-hover:text-white/70"
+          className="text-muted transition-all duration-300 group-hover:translate-x-0.5 group-hover:text-muted"
         >
           <path
             d="M1 7h11m0 0L7.5 2.5M12 7l-4.5 4.5"

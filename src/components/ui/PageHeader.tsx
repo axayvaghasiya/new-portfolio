@@ -26,7 +26,7 @@ export function PageHeader({ eyebrow, title, description, className }: PageHeade
             {title}
           </h1>
           {description && (
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/60 md:text-xl">
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted md:text-xl">
               {description}
             </p>
           )}

@@ -27,7 +27,7 @@ export function AboutSnippet() {
                 </>
               }
             />
-            <Reveal className="-mt-6 space-y-5 text-lg leading-relaxed text-white/60">
+            <Reveal className="-mt-6 space-y-5 text-lg leading-relaxed text-muted">
               <p>
                 For eight years I have built the systems behind ambitious
                 brands: Shopify Plus storefronts, headless builds, B2B
@@ -37,10 +37,10 @@ export function AboutSnippet() {
               </p>
               <p>
                 Today I am focused on what comes next:{" "}
-                <span className="text-white">agentic commerce</span>. As AI
+                <span className="text-fg">agentic commerce</span>. As AI
                 agents begin browsing, comparing, and buying, I help brands
                 make their stacks machine-legible, from{" "}
-                <span className="text-white">AI readiness audits</span> through
+                <span className="text-fg">AI readiness audits</span> through
                 to MCP-connected storefronts with human approval loops.
               </p>
             </Reveal>
@@ -61,7 +61,7 @@ export function AboutSnippet() {
                   <p className="font-display text-3xl font-semibold text-green">
                     {s.value}
                   </p>
-                  <p className="mt-2 font-mono text-[0.68rem] leading-relaxed tracking-[0.14em] text-white/40 uppercase">
+                  <p className="mt-2 font-mono text-[0.68rem] leading-relaxed tracking-[0.14em] text-muted uppercase">
                     {s.label}
                   </p>
                 </div>

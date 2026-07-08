@@ -50,14 +50,14 @@ export default function BlogPage() {
               <div className="relative">
                 <div className="flex flex-wrap items-center gap-3">
                   <Badge accent={featured.accent}>{featured.tag}</Badge>
-                  <span className="font-mono text-xs text-white/35">
+                  <span className="font-mono text-xs text-muted">
                     {formatDate(featured.date)} · {featured.readingTime}
                   </span>
                 </div>
                 <h2 className="mt-6 max-w-3xl font-display text-3xl leading-tight font-semibold tracking-tight text-balance transition-colors duration-300 group-hover:text-green md:text-5xl">
                   {featured.title}
                 </h2>
-                <p className="mt-5 max-w-2xl leading-relaxed text-white/55">
+                <p className="mt-5 max-w-2xl leading-relaxed text-muted">
                   {featured.excerpt}
                 </p>
                 <p className="mt-8 font-mono text-xs tracking-[0.18em] text-green uppercase">
@@ -84,10 +84,10 @@ export default function BlogPage() {
                 <h3 className="mt-5 flex-none font-display text-xl leading-snug font-semibold tracking-tight transition-colors duration-300 group-hover:text-purple">
                   {post.title}
                 </h3>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-white/50">
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">
                   {post.excerpt}
                 </p>
-                <p className="mt-6 font-mono text-xs text-white/35">
+                <p className="mt-6 font-mono text-xs text-muted">
                   {formatDate(post.date)} · {post.readingTime}
                 </p>
               </Link>
